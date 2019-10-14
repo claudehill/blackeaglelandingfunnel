@@ -3,14 +3,14 @@
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42167686-12"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42167686-12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-42167686-12');
-</script>
+    gtag('config', 'UA-42167686-12');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
     integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
     crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body id="home">
@@ -52,7 +53,7 @@
             <a href="#monitor-head-section" class="nav-link">Grow</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Get in Touch</a>
+            <a href="#" role="button" data-toggle="modal" data-target="#contactModal" class="nav-link">Get in Touch</a>
           </li>
 
         </ul>
@@ -111,20 +112,20 @@
                 <div class="card-body">
                   <h3>FREE Phone Consultation</h3>
                   <p>Please fill out this request form. <br /> All fields are required.</p>
-                  <form action="">
+                  <form name="phone-request" method="POST" data-netlify="true">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-lg" placeholder="First Name" required>
+                      <input type="text" class="form-control form-control-lg" name="name" placeholder="First & Last Name" required>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-lg" placeholder="Last Name" required>
+                      <input type="email" class="form-control form-control-lg" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email Address" required>
+                      <input type="tel" class="form-control form-control-lg" name="phone" placeholder="Daytime Phone" required>
                     </div>
-                    <div class="form-group">
-                      <input type="tel" class="form-control form-control-lg" placeholder="Daytime Phone" required>
-                    </div>
-                    <input type="submit" class="btn btn-outline-light btn-block" value="Submit">
+
+                    <div class="g-recaptcha" data-sitekey="6LcweL0UAAAAACN_3RPh6hEKIRLJDIZvb9h6PO48"></div>
+
+                    <input type="submit" class="btn btn-outline-light btn-block mt-4" value="Submit">
                   </form>
                 </div>
               </div>
@@ -252,7 +253,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                   <button class="btn btn-outline-light my-3 btn-feature-alt" data-toggle="modal"
-                    data-target="#specialRequestModal">
+                    data-target="#contactModal">
                     <span><i class="fa fa-envelope fa-3x mt-3"></i></span><br />
                     <hr class="white hov-dk" />
                     Direct Marketing Campaigns</button>
@@ -298,7 +299,7 @@
             <div class="p-4 align-self-end">
               <strong class="white">Direct Marketing.</strong>
               Need to try the direct approach? We offer direct mail campaigns upon special request. <a href="#"
-                class="dk-link" role="button" data-toggle="modal" data-target="#specialRequestModal">Click here to
+                class="dk-link" role="button" data-toggle="modal" data-target="#contactModal">Click here to
                 request an appointment</a> to discuss your specific needs.
             </div>
           </div>
@@ -391,23 +392,6 @@
     </div>
   </section>
 
-  <!-- MAIN FOOTER -->
-
-  <!-- <footer id="main-footer" class="bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center">
-          <div class="py-4">
-            <h1 class="h3">Looplab </h1>
-            <p>&copy; 2019</p>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Contact Us</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer> -->
-
-
   <!-- MAIN AVE FOOTER -->
 
   <footer class="blog-footer blog-footer-overlay pt-4">
@@ -478,52 +462,48 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="contactModalTitle">Contact Us</h5>
+          <h3 class="modal-title fancy" id="contactModalTitle">Contact Us</h3>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form name="contact" method="POST" data-netlify="true">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="name" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control">
+              <input type="email" class="form-control" name="email" required>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea type="textarea" class="form-control"></textarea>
+              <textarea type="textarea" class="form-control" name="message" required></textarea>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-lg btn-primary btn-block">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
+            <div class="modal-footer">
 
-
-  <div class="modal fade text-dark" id="specialRequestModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="specialRequestModalTitle">Special Request</h5>
-        </div>
-        <div class="modal-body">
-          <form action="">
-            <div class="form-group">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div class="g-recaptcha" data-sitekey="6LcweL0UAAAAACN_3RPh6hEKIRLJDIZvb9h6PO48"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button id="btn-contact" type="submit" class="btn btn-lg btn-block fancy">Send Message</button>
+                  </div>
+                </div>
               </div>
             </div>
+
+
           </form>
         </div>
+
+
       </div>
     </div>
   </div>
+
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

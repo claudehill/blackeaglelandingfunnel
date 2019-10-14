@@ -5,7 +5,9 @@
   /* --primary-color: #970001; */
   --primary-color: #800400;
   --dark-overlay: rgba(0,0,0,0.3);
+  --dark-bg: rgba(0,0,0,0.7);
   --icon-size: 30px;
+  --fancy-font: 'Advent Pro', sans-serif;
 }
 
 html {
@@ -83,6 +85,29 @@ font-family: 'Advent Pro', sans-serif; */
   background: var(--primary-color);
 }
 
+.modal {
+  /* background: var(--primary-color); */
+  background: var(--dark-bg);
+  /* opacity: 0.9; */
+}
+
+.modal-header,
+#btn-contact {
+  background-color:var(--primary-color);
+  color: var(--font-color);
+}
+
+#btn-contact {
+    margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.g-recaptcha > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .logo {
   max-height: 50px;
   max-width: auto;
@@ -90,7 +115,6 @@ font-family: 'Advent Pro', sans-serif; */
 
 .form-control:focus {
   border-color:#fff;
-  /* box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); */
 }
 
 .head-section {
@@ -132,7 +156,6 @@ hr.red:hover {
 
 .img-overlay, .blog-footer-overlay {
   position: relative;
-  /* max-width: 500px; */
 }
 
 .footer-overlay {
@@ -180,4 +203,8 @@ hr.red:hover {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+.modal-header {
+  justify-content: center;
 }
