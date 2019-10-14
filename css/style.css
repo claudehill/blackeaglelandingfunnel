@@ -104,6 +104,10 @@ font-family: 'Advent Pro', sans-serif; */
   color: var(--font-color);
 }
 
+li>a.dk-link {
+  text-decoration: none;
+}
+
 #marketing-head-section, 
 #monitor-head-section {
   background: var(--primary-color);
