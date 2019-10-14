@@ -112,7 +112,7 @@
                 <div class="card-body">
                   <h3>FREE Phone Consultation</h3>
                   <p>Please fill out this request form. <br /> All fields are required.</p>
-                  <form name="phone-request" method="POST" data-netlify="true">
+                  <form name="phone-request" method="POST" data-netlify-recaptcha="true" data-netlify="true">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-lg" name="name" placeholder="First & Last Name" required>
                     </div>
@@ -465,7 +465,7 @@
           <h3 class="modal-title fancy" id="contactModalTitle">Contact Us</h3>
         </div>
         <div class="modal-body">
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" class="form-control" name="name" required>
